@@ -1,0 +1,45 @@
+﻿<Window x:Class="lab13var17.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab13var17"
+        mc:Ignorable="d"
+        Title="Военнообязанные" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ToolBar HorizontalAlignment="Stretch" Grid.Row="0" VerticalAlignment="Stretch" Background="LightGray">
+            <Button Name="btnAdd" Content="Добавить человека" Background="White" Height="30" Width="130" 
+                    VerticalAlignment="Center" Margin="5,5,5,5" Click="btnAdd_Click"/>
+            <Button Name="btnYoungPerson" Content="Самый младший" Background="White" Height="30" Width="130" 
+                    VerticalAlignment="Center" Margin="5,5,5,5" Click="btnYoungPerson_Click"/>
+            <Button Name="btnOldPeople" Content="Самые старшие" Background="White" Height="30" Width="130" 
+                    VerticalAlignment="Center" Margin="5,5,5,5" Click="btnOldPeople_Click"/>
+            <TextBox Name="txbSurnameSearch" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Height="20" Width="130" Margin="5,5,5,5"/>
+            <Button Name="btnSearch" Background="White" Height="20" Width="20" 
+                    VerticalAlignment="Center" Margin="5,5,5,5" Click="btnSearch_Click">
+                <Image Source="C:\Users\SergeyT\source\repos\lab13var17\lab13var17\search.png"></Image>
+            </Button>
+            <Button Name="btnCancelSearch" Content="✕" Background="White" Height="20" Width="20" 
+                    VerticalAlignment="Center" Margin="5,5,5,5" Click="btnCancelSearch_Click"/>
+        </ToolBar>
+        <DataGrid Name="dgPeoples" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Фото">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Image}" Width="75"></Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}"/>
+                <DataGridTextColumn Header="Возраст" Binding="{Binding Age}"/>
+                <DataGridTextColumn Header="Военнообязанный" Binding="{Binding Soldier}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

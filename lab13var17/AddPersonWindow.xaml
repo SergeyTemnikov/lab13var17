@@ -1,0 +1,64 @@
+﻿<Window x:Class="lab13var17.AddPersonWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab13var17"
+        mc:Ignorable="d"
+        Title="Добавить человека" Height="450" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="150"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="Gray" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"></Rectangle>
+        <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="Добавление человека" Foreground="White" 
+                FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Column="0" Grid.Row="2" Text="Фамилия:" FontSize="14" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBox Name="txbSurname"  Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="140" Height="20"/>
+
+        <TextBlock Grid.Column="0" Grid.Row="3" Text="Возраст:" FontSize="14" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBox Name="txbAge" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="140" Height="20"/>
+
+        <TextBlock Grid.Column="0" Grid.Row="4" Text="Военнообязанный:" FontSize="14" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBox Name="txbSoldier" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="140" Height="20"/>
+
+        <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" Width="150" BorderBrush="Gray" BorderThickness="1">
+            <Image Name="imgPhoto" Width="150"></Image>
+        </Border>
+        <Button Content="Добавить фото" Grid.Column="1" Grid.Row="6" Margin="10,10,10,10" Background="Gray" Foreground="White" Click="AddImage_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button Content="Сохранить" Grid.Column="0" Grid.Row="7" Margin="10,10,10,10" Background="Gray" Foreground="White" Click="Save_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="Отменить" Grid.Column="1" Grid.Row="7" Margin="10,10,10,10" Background="Gray" Foreground="White" Click="Cancel_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>
